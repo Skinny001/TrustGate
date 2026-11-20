@@ -1,0 +1,165 @@
+[
+  {
+    "id": "rec_1795098951038_4u917",
+    "timestamp": "2026-11-19T14:35:51.038Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "TrustGate Weather Agent",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "externalKey": {
+      "chain": "eip155:8453",
+      "address": "0x372b4eB67006F68A9f296b23715055b8A878ABA9",
+      "standard": "ERC-8004"
+    },
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified by Concordium (CIS-8004) & x402 payment settled",
+    "payment": {
+      "txHash": "0xec1d2fd32ca2062e8ef56675a361e4c3a51e653781466f29142b7abf85eb5e4e",
+      "amount": "0.002",
+      "currency": "CCD",
+      "settled": true
+    },
+    "riskScore": 8
+  },
+  {
+    "id": "rec_1795098902232_nkoik",
+    "timestamp": "2026-11-19T14:35:02.232Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "anonymous-caller",
+    "concordiumOwner": "UNVERIFIED",
+    "decision": "BLOCKED",
+    "statusCode": 403,
+    "reason": "Rejected: Missing X-Concordium-Badge header. Only registered autonomous agents permitted.",
+    "riskScore": 100
+  },
+  {
+    "id": "rec_1795098639377_y1pmx",
+    "timestamp": "2026-11-19T14:30:39.377Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "TrustGate Weather Agent",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "externalKey": {
+      "chain": "eip155:8453",
+      "address": "0x372b4eB67006F68A9f296b23715055b8A878ABA9",
+      "standard": "ERC-8004"
+    },
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified by Concordium (CIS-8004) & x402 payment settled",
+    "payment": {
+      "txHash": "0x6383a5fe60ccefe0751a92b1e8ec3d556f0839fd95ad925c68d21f10d78c64e4",
+      "amount": "0.002",
+      "currency": "CCD",
+      "settled": true
+    },
+    "riskScore": 8
+  },
+  {
+    "id": "rec_1795094952984_fs2q3",
+    "timestamp": "2026-11-19T13:29:12.984Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "TrustGate Weather Agent",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "externalKey": {
+      "chain": "eip155:8453",
+      "address": "0x372b4eB67006F68A9f296b23715055b8A878ABA9",
+      "standard": "ERC-8004"
+    },
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified by Concordium (CIS-8004) & x402 payment settled",
+    "payment": {
+      "txHash": "0x8aaf2f9ac3a4ed52c3f5c713defb074a3df7259e7a3154f78ae39518b64490d0",
+      "amount": "0.002",
+      "currency": "CCD",
+      "settled": true
+    },
+    "riskScore": 8
+  },
+  {
+    "id": "rec_1795094946414_p1408",
+    "timestamp": "2026-11-19T13:29:06.414Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "Rogue-Scraper-Bot",
+    "concordiumOwner": "UNVERIFIED",
+    "decision": "BLOCKED",
+    "statusCode": 403,
+    "reason": "Rejected: Badge \"ccd:agent:unregistered-rogue:v0\" is not found or not active in the Concordium Agent Registry (CIS-8004)",
+    "riskScore": 100
+  },
+  {
+    "id": "rec_1795094264620_i3mcl",
+    "timestamp": "2026-11-19T13:17:44.620Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "Rogue-Scraper-Bot-v9",
+    "concordiumOwner": "UNVERIFIED",
+    "decision": "BLOCKED",
+    "statusCode": 403,
+    "reason": "Rejected: Badge \"ccd:agent:fake-unregistered:v0\" is not found or not active in the Concordium Agent Registry (CIS-8004)",
+    "riskScore": 100
+  },
+  {
+    "id": "rec_1795094264012_7tw30",
+    "timestamp": "2026-11-19T13:17:44.012Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "TrustGate Weather Agent",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "externalKey": {
+      "chain": "eip155:8453",
+      "address": "0x372b4eB67006F68A9f296b23715055b8A878ABA9",
+      "standard": "ERC-8004"
+    },
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified by Concordium (CIS-8004) & x402 payment settled",
+    "payment": {
+      "txHash": "0xec1d2fd32ca2062e8ef56675a361e4c3a51e653781466f29142b7abf85eb5e4e",
+      "amount": "0.002",
+      "currency": "CCD",
+      "settled": true
+    },
+    "riskScore": 8
+  },
+  {
+    "id": "rec_1794920872585_5qfh4",
+    "timestamp": "2026-11-17T13:07:52.585Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "Rogue-Scraper-Bot-v9",
+    "concordiumOwner": "UNVERIFIED",
+    "decision": "BLOCKED",
+    "statusCode": 403,
+    "reason": "Rejected: Badge \"ccd:agent:fake-unregistered:v0\" is not found or not active in the Concordium Agent Registry (CIS-8004)",
+    "riskScore": 100
+  },
+  {
+    "id": "rec_1794920872038_ss65r",
+    "timestamp": "2026-11-17T13:07:52.038Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "WeatherAlpha-Agent",
+    "concordiumOwner": "4c9f116719b6736c92bc490453d0e34c264c8a21",
+    "externalKey": {
+      "chain": "eip155:84532",
+      "address": "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1",
+      "standard": "ERC-8004"
+    },
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified by Concordium (CIS-8004) & x402 payment settled",
+    "payment": {
+      "txHash": "0x604722901270033ac1fd2913165171f8cf19841b4955338533adac9bf2ace3b0",
+      "amount": "0.002",
+      "currency": "CCD",
+      "settled": true
+    },
+    "riskScore": 8
+  }
+]

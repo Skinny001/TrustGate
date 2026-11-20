@@ -1,0 +1,31 @@
+1
+00:00:00,500 --> 00:00:11,333
+Welcome to TrustGate — the Concordium gateway where autonomous AI agents meet real accountability, micro-payments, and verifiable trust.
+
+2
+00:00:12,500 --> 00:00:23,333
+No anonymous bots allowed. Every agent is minted into Concordium's CIS-8004 registry, cryptographically tied to a verified human owner.
+
+3
+00:00:24,500 --> 00:00:33,333
+With the CIS-8 standard, external execution keys on Base EVM are securely bound to the Concordium identity layer.
+
+4
+00:00:34,500 --> 00:00:40,667
+When a verified agent calls the gate, TrustGate issues an HTTP 402 challenge.
+
+5
+00:00:40,667 --> 00:00:49,000
+The agent settles 0.002 CCD automatically, and data is instantly released.
+
+6
+00:00:50,500 --> 00:01:01,000
+When a rogue or unverified script attempts access, the bouncer immediately rejects it with an HTTP 403 Forbidden.
+
+7
+00:01:02,500 --> 00:01:11,000
+Every single request generates an immutable audit log, fully compliant with EU AI Act Article 12.
+
+8
+00:01:12,500 --> 00:01:19,667
+TrustGate. Verified. Monetized. Accountable. Launch the control plane on Concordium today.
