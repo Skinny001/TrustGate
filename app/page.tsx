@@ -31,11 +31,19 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#F6F4EE] text-stone-900 selection:bg-stone-800 selection:text-stone-100 font-sans">
       {/* Top Newspaper Masthead Strip */}
-      <div className="border-b border-stone-300 bg-[#EFECE3] px-4 py-1.5 text-center text-[11px] font-serif tracking-wider text-stone-700">
+      <div className="border-b border-stone-300 bg-[#EFECE3] px-4 py-1.5 text-center text-[11px] font-serif tracking-wider text-stone-700 flex flex-wrap items-center justify-center gap-2">
         <span className="font-semibold uppercase">Encode Club × Concordium Trusted Agents Hackathon</span>
-        <span className="mx-2 text-stone-400">·</span>
-        <span>Special Dispatch: Testnet Autonomous Agent Bouncer</span>
-        <span className="mx-2 text-stone-400">·</span>
+        <span className="text-stone-400">·</span>
+        <a
+          href="https://www.npmjs.com/package/@0xskinny001/trustgate-sdk"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1 font-mono text-[10px] font-bold text-red-900 bg-red-100 border border-red-300 px-2 py-0.5 rounded-full hover:bg-red-800 hover:text-white transition"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-red-800" />
+          npm: @0xskinny001/trustgate-sdk (v1.0.1) <ExternalLink size={9} />
+        </a>
+        <span className="text-stone-400">·</span>
         <Link href="/dashboard" className="font-semibold underline hover:text-stone-900 ml-1 inline-flex items-center gap-1">
           Launch Control Plane <ArrowRight size={11} />
         </Link>
@@ -76,6 +84,14 @@ export default function LandingPage() {
             </div>
 
             <div className="flex items-center gap-3 mt-2 sm:mt-0">
+              <a
+                href="https://www.npmjs.com/package/@0xskinny001/trustgate-sdk"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded border border-stone-400 bg-white px-2.5 py-1 font-mono text-[11px] font-bold text-stone-900 hover:bg-stone-100 transition"
+              >
+                npm package <ExternalLink size={10} />
+              </a>
               <Link
                 href="/dashboard"
                 className="inline-flex items-center gap-1.5 rounded bg-stone-950 px-3.5 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-[#F6F4EE] hover:bg-stone-800 transition"

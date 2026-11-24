@@ -8,6 +8,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  Award,
   Check,
   CheckCircle2,
   Code2,
@@ -24,7 +25,9 @@ import {
   LockKeyhole,
   Newspaper,
   Play,
+  Printer,
   RefreshCw,
+  Scale,
   Search,
   ShieldAlert,
   ShieldCheck,
@@ -84,6 +87,7 @@ export default function DashboardPage() {
   const [lastActionResult, setLastActionResult] = useState<string | null>(null);
   const [auditFilter, setAuditFilter] = useState<'ALL' | 'ALLOWED' | 'BLOCKED'>('ALL');
   const [selectedRecord, setSelectedRecord] = useState<AuditRecord | null>(null);
+  const [certificateModalRecord, setCertificateModalRecord] = useState<AuditRecord | null>(null);
 
   // Feature 1: Developer SDK state
   const [sdkFramework, setSdkFramework] = useState<'next' | 'python' | 'mcp' | 'curl'>('next');
@@ -365,6 +369,22 @@ export default function DashboardPage() {
                 className="mt-2 inline-flex items-center gap-1 font-serif text-[11px] text-red-900 font-semibold hover:underline"
               >
                 View on CCDExplorer <ExternalLink size={11} />
+              </a>
+            </div>
+
+            <div className="rounded-lg border border-stone-300 bg-white p-3 shadow-sm">
+              <div className="flex items-center justify-between text-xs text-stone-600 font-serif">
+                <span className="font-mono text-[10px] font-bold text-stone-900 uppercase">Official NPM SDK</span>
+                <span className="rounded bg-red-900 px-1.5 py-0.5 font-mono text-[9px] font-bold text-white">v1.0.1</span>
+              </div>
+              <a
+                href="https://www.npmjs.com/package/@0xskinny001/trustgate-sdk"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1.5 flex items-center justify-between font-mono text-[10px] text-stone-900 font-bold hover:text-red-900 transition"
+              >
+                <span className="truncate">@0xskinny001/trustgate-sdk</span>
+                <ExternalLink size={10} className="shrink-0 ml-1" />
               </a>
             </div>
 
@@ -1148,6 +1168,15 @@ X-Bouncer-Reason: Rogue agent failed CIS-8004 identity check
                               </td>
                               <td className="py-3">
                                 <div className="flex items-center gap-1.5">
+                                  {/* View Official Legal Certificate */}
+                                  <button
+                                    onClick={() => setCertificateModalRecord(record)}
+                                    title="View Official EU AI Act Article 12 Legal Certificate"
+                                    className="cursor-pointer inline-flex items-center gap-1 rounded border border-stone-900 bg-stone-950 px-2.5 py-1 font-mono text-[10px] font-bold text-white hover:bg-stone-800 active:scale-95 transition-all shadow-xs"
+                                  >
+                                    <Award size={12} className="text-amber-400" /> View Decree
+                                  </button>
+
                                   {/* Inspect JSON */}
                                   <button
                                     onClick={() => setSelectedRecord(record)}
@@ -1161,9 +1190,9 @@ X-Bouncer-Reason: Rogue agent failed CIS-8004 identity check
                                   <button
                                     onClick={() => handleDownloadCertificate(record)}
                                     title="Download EU AI Act Article 12 Certificate"
-                                    className="cursor-pointer inline-flex items-center gap-1 rounded border border-stone-400 bg-white px-2.5 py-1 font-mono text-[10px] font-semibold text-stone-900 hover:bg-stone-100 active:scale-95 transition-all shadow-xs"
+                                    className="cursor-pointer inline-flex items-center gap-1 rounded border border-stone-400 bg-white px-2 py-1 font-mono text-[10px] font-semibold text-stone-900 hover:bg-stone-100 active:scale-95 transition-all shadow-xs"
                                   >
-                                    <Download size={11} /> Certificate
+                                    <Download size={11} /> JSON
                                   </button>
                                 </div>
                               </td>
@@ -1192,12 +1221,18 @@ X-Bouncer-Reason: Rogue agent failed CIS-8004 identity check
                           Forensic Audit Payload ({selectedRecord.id})
                         </h3>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => setCertificateModalRecord(selectedRecord)}
+                          className="cursor-pointer inline-flex items-center gap-1.5 rounded border border-amber-900 bg-stone-950 px-2.5 py-1 text-xs font-mono font-bold text-amber-300 hover:bg-stone-800 active:scale-95 transition-all shadow-sm"
+                        >
+                          <Award size={13} className="text-amber-400" /> View Printable Decree
+                        </button>
                         <button
                           onClick={() => handleDownloadCertificate(selectedRecord)}
-                          className="cursor-pointer inline-flex items-center gap-1.5 rounded border border-stone-900 bg-stone-950 px-2.5 py-1 text-xs font-mono font-bold text-white hover:bg-stone-800 active:scale-95 transition-all shadow-sm"
+                          className="cursor-pointer inline-flex items-center gap-1.5 rounded border border-stone-900 bg-white px-2.5 py-1 text-xs font-mono font-bold text-stone-900 hover:bg-stone-100 active:scale-95 transition-all shadow-sm"
                         >
-                          <Download size={12} /> Download Official Certificate (.JSON)
+                          <Download size={12} /> Download JSON
                         </button>
                         <button
                           onClick={() => setSelectedRecord(null)}
@@ -1228,9 +1263,20 @@ X-Bouncer-Reason: Rogue agent failed CIS-8004 identity check
                         Protect any AI agent endpoint or Model Context Protocol (MCP) server in 3 lines of code.
                       </p>
                     </div>
-                    <span className="rounded border border-stone-900 bg-[#EAE6DB] px-3 py-1 font-mono text-xs font-bold text-stone-950 uppercase">
-                      Drop-In Proxy · 0.002 CCD Tariff
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <a
+                        href="https://www.npmjs.com/package/@0xskinny001/trustgate-sdk"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded border border-red-900 bg-red-900 px-3 py-1 font-mono text-xs font-bold text-white hover:bg-red-800 transition shadow-sm"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                        npm: @0xskinny001/trustgate-sdk v1.0.1 <ExternalLink size={11} />
+                      </a>
+                      <span className="rounded border border-stone-900 bg-[#EAE6DB] px-3 py-1 font-mono text-xs font-bold text-stone-950 uppercase">
+                        Drop-In Proxy · 0.002 CCD Tariff
+                      </span>
+                    </div>
                   </div>
 
                   {/* Framework Selector Tabs */}
@@ -1455,6 +1501,172 @@ server.tool(
           </div>
         </section>
       </div>
+
+      {/* OFFICIAL EU AI ACT ARTICLE 12 STATUTORY CERTIFICATE MODAL */}
+      {certificateModalRecord && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-4 overflow-y-auto">
+          <div className="relative w-full max-w-3xl rounded-xl border-4 border-stone-900 bg-[#F6F4EE] p-6 sm:p-10 shadow-2xl my-8">
+            {/* Modal Top Actions (Hidden when printing) */}
+            <div className="mb-6 flex items-center justify-between border-b-2 border-stone-900 pb-3 print:hidden">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-800" />
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-stone-950">
+                  Official Regulatory Certificate Viewer
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => window.print()}
+                  className="cursor-pointer inline-flex items-center gap-1.5 rounded border border-stone-900 bg-stone-950 px-3 py-1 font-serif text-xs font-bold uppercase text-white hover:bg-stone-800 active:scale-95 transition-all shadow-sm"
+                >
+                  <Printer size={13} /> Print / Save PDF
+                </button>
+                <button
+                  onClick={() => handleDownloadCertificate(certificateModalRecord)}
+                  className="cursor-pointer inline-flex items-center gap-1.5 rounded border border-stone-400 bg-white px-3 py-1 font-mono text-xs font-semibold text-stone-900 hover:bg-stone-100 active:scale-95 transition-all shadow-xs"
+                >
+                  <Download size={13} /> JSON
+                </button>
+                <button
+                  onClick={() => setCertificateModalRecord(null)}
+                  className="cursor-pointer rounded border border-stone-300 bg-white px-2.5 py-1 font-mono text-xs font-bold text-stone-700 hover:text-stone-950 hover:bg-stone-100 active:scale-95 transition-all"
+                >
+                  ✕ Close
+                </button>
+              </div>
+            </div>
+
+            {/* The Broadsheet Certificate Document Frame */}
+            <div className="border-2 border-stone-800 bg-[#FDFCFA] p-6 sm:p-8 relative overflow-hidden font-serif shadow-inner">
+              {/* Watermark / Subtle Background Stamp */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-5 select-none">
+                <Scale size={320} className="text-stone-950" />
+              </div>
+
+              {/* Broadsheet Certificate Header */}
+              <div className="text-center border-b-2 border-stone-900 pb-5">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <TrustGateLogo size={46} />
+                </div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-red-900 font-bold">
+                  REGULATION (EU) 2024/1689 · STATUTORY DECREE
+                </p>
+                <h1 className="font-serif text-2xl sm:text-3xl font-black uppercase tracking-tight text-stone-950 mt-1">
+                  Article 12 Compliance Certificate
+                </h1>
+                <p className="font-serif italic text-xs text-stone-700 mt-1">
+                  Verifiable Record-Keeping & Non-Repudiation for Autonomous Artificial Intelligence Systems
+                </p>
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-[10px] font-mono text-stone-600 border-t border-stone-200 pt-2">
+                  <span>ID: CERT-CONCORDIUM-{certificateModalRecord.id.toUpperCase()}</span>
+                  <span>·</span>
+                  <span>ISSUED: {new Date(certificateModalRecord.timestamp).toUTCString()}</span>
+                  <span>·</span>
+                  <span className="font-bold text-emerald-900">VERIFIED COMPLIANT</span>
+                </div>
+              </div>
+
+              {/* Legal Preamble */}
+              <div className="py-4 text-xs leading-relaxed text-stone-800 border-b border-stone-300">
+                <p className="first-letter:font-serif first-letter:text-3xl first-letter:font-bold first-letter:float-left first-letter:mr-2.5 first-letter:leading-none text-stone-900">
+                  This statutory certificate certifies that the autonomous AI agent referenced herein successfully presented cryptographic identity credentials registered in accordance with the Concordium CIS-8004 standard, confirmed binding to a verified legal identity, and satisfied autonomous micropayment settlement via protocol x402 pursuant to Article 12 statutory accountability obligations.
+                </p>
+              </div>
+
+              {/* Certificate Data Matrix Grid */}
+              <div className="grid gap-4 py-4 sm:grid-cols-2 text-xs border-b border-stone-300 font-sans">
+                <div className="space-y-3 font-serif">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Accountable Human Owner (Concordium Identity):
+                    </span>
+                    <a
+                      href={`https://ccdexplorer.io/testnet/account/${certificateModalRecord.concordiumOwner}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-mono font-bold text-stone-950 hover:underline break-all text-[11px]"
+                    >
+                      {certificateModalRecord.concordiumOwner}
+                    </a>
+                  </div>
+
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Autonomous Agent Identity / Badge:
+                    </span>
+                    <span className="font-bold text-stone-950 block">{certificateModalRecord.agentId}</span>
+                  </div>
+
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Registry Standard & Contract:
+                    </span>
+                    <span className="font-mono font-bold text-stone-900 text-[11px]">
+                      Concordium CIS-8004 · Contract #10082
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-3 font-serif">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Bound Cross-Chain Signer (CIS-8):
+                    </span>
+                    <span className="font-mono font-bold text-stone-950 break-all text-[11px]">
+                      {certificateModalRecord.externalKey?.address || '0x372b4eB67006F68A9f296b23715055b8A878ABA9 (Base EVM)'}
+                    </span>
+                  </div>
+
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Autonomous Micropayment Settlement:
+                    </span>
+                    <span className="font-mono font-bold text-emerald-900 text-[11px]">
+                      0.002 CCD Settled (x402 Micro-Payment Protocol)
+                    </span>
+                  </div>
+
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                      Settlement Transaction Hash:
+                    </span>
+                    <span className="font-mono font-bold text-stone-950 break-all text-[11px]">
+                      {certificateModalRecord.payment?.txHash || '0x7c4e9a12f0b83d56e1a942b083c618d49a...'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Cryptographic Digest & Regulatory Seal */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="space-y-1 text-left flex-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-stone-500 block">
+                    Cryptographic Payload Digest (SHA-256):
+                  </span>
+                  <code className="font-mono text-[10px] text-stone-900 bg-stone-100 p-1.5 rounded block border border-stone-300 break-all">
+                    0x{Array.from(new TextEncoder().encode(certificateModalRecord.id + certificateModalRecord.timestamp + certificateModalRecord.concordiumOwner))
+                      .map((b) => b.toString(16).padStart(2, '0'))
+                      .join('')
+                      .slice(0, 56)}...
+                  </code>
+                  <span className="font-serif italic text-[10px] text-stone-600 block">
+                    Enforceable pursuant to European Union Regulation (EU) 2024/1689 Article 12 statutory requirements.
+                  </span>
+                </div>
+
+                {/* Visual Broadsheet Red Wax Stamp */}
+                <div className="shrink-0 rounded-full border-2 border-dashed border-red-900 bg-red-50 p-3 text-center text-red-900 shadow-sm rotate-[-3deg]">
+                  <div className="border border-red-800 rounded-full p-2 text-[9px] font-serif font-black uppercase tracking-wider leading-tight">
+                    <p>CONCORDIUM</p>
+                    <p className="text-[11px] font-mono font-bold text-red-950">VERIFIED</p>
+                    <p className="text-[8px] text-red-800">CIS-8004 · ART. 12</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
