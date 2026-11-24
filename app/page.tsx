@@ -45,14 +45,6 @@ export default function LandingPage() {
       <header className="border-b-2 border-stone-900 bg-[#F6F4EE]">
         <div className="mx-auto max-w-6xl px-6 pt-8 pb-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="flex items-center gap-2 mb-3 text-xs font-mono uppercase tracking-[0.25em] text-stone-600">
-              <span>Vol. I · No. 01</span>
-              <span>—</span>
-              <span>Autonomous Agent Protocol</span>
-              <span>—</span>
-              <span>Lagos / Global</span>
-            </div>
-
             <div className="mb-2">
               <TrustGateLogo size={68} />
             </div>

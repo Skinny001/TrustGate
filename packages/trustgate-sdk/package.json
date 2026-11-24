@@ -1,0 +1,49 @@
+{
+  "name": "@0xskinny001/trustgate-sdk",
+  "version": "1.0.1",
+  "description": "TrustGate Autonomous AI Agent Bouncer SDK with Concordium CIS-8004 identity verification, CIS-8 cross-chain key binding, and x402 micro-payment settlement.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"const fs=require('fs'); if(fs.existsSync('./dist/index.js')){ fs.copyFileSync('./dist/index.js', './dist/index.mjs'); }\""
+  },
+  "keywords": [
+    "concordium",
+    "ai-agents",
+    "autonomous-agents",
+    "cis-8004",
+    "cis-8",
+    "x402",
+    "article-12",
+    "eu-ai-act",
+    "trustgate",
+    "micropayments"
+  ],
+  "author": "0xskinny001",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Skinny001/TrustGate.git",
+    "directory": "packages/trustgate-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/Skinny001/TrustGate/issues"
+  },
+  "homepage": "https://github.com/Skinny001/TrustGate#readme",
+  "dependencies": {
+    "ethers": "^6.13.0"
+  }
+}

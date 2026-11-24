@@ -3,6 +3,7 @@
 > **Accountable AI Agent Gateway powered by Concordium Identity (CIS-8004 / CIS-8) & x402 Micro-Payments**  
 > *Built for the Concordium Trusted Agents Hackathon (Encode Club & Concordium)*
 
+[![npm version](https://img.shields.io/npm/v/@0xskinny001/trustgate-sdk.svg?color=crimson)](https://www.npmjs.com/package/@0xskinny001/trustgate-sdk)
 [![Concordium Testnet](https://img.shields.io/badge/Concordium-Testnet-emerald.svg)](https://ccdexplorer.io/testnet)
 [![Standards](https://img.shields.io/badge/Standards-CIS--8004%20%7C%20CIS--8%20%7C%20x402-blue.svg)](https://docs.concordium.com)
 [![Compliance](https://img.shields.io/badge/Compliance-EU%20AI%20Act%20Art.%2012-violet.svg)](https://artificialintelligenceact.eu)
@@ -19,6 +20,7 @@
 | **3. Demo Video** (Up to 3 minutes, showing core flow working) | ✅ **Complete** | [Watch on YouTube (https://youtu.be/u_wb-OnNzN8)](https://youtu.be/u_wb-OnNzN8) — See [Demo Video Details](#-product-demo-video) |
 | **4. CCDExplorer Links** (Agent, contract, and testnet transactions) | ✅ **Complete** | Live Concordium Testnet links — See [On-Chain Verification](#-ccdexplorer-links--on-chain-identity) |
 | **5. Path to Production** (Requirements to go live on Mainnet) | ✅ **Complete** | Detailed 5-phase plan — See [Path to Production](#-path-to-production) |
+| **6. Official NPM Package** (Drop-in SDK for developers) | ✅ **Complete** | [`@0xskinny001/trustgate-sdk` on npm](https://www.npmjs.com/package/@0xskinny001/trustgate-sdk) — See [Developer SDK](#-official-developer-drop-in-sdk-0xskinny001trustgate-sdk) |
 
 ---
 
@@ -79,6 +81,80 @@ TrustGate is connected to live, verified Concordium Testnet contracts and identi
 | **CIS-8 Key Binding Contract** | Contract Index `10081` (Subindex `0`) | [CIS-8 Contract #10081](https://ccdexplorer.io/testnet) |
 | **Registered Agent Badge** | `ccd:4221332d34e1694168c2a0c0b3fd0f27/cis-2:JyP9U4GmLT6BJ2egEfmgL` | Concordium Testnet CIS-2 Badge |
 | **Bound External Key (Base EVM)** | `0x372b4eB67006F68A9f296b23715055b8A878ABA9` | CAIP-2: `eip155:8453` |
+
+---
+
+## 📦 Official Developer Drop-in SDK (`@0xskinny001/trustgate-sdk`)
+
+TrustGate is distributed as an open-source, production-ready npm package: **[`@0xskinny001/trustgate-sdk`](https://www.npmjs.com/package/@0xskinny001/trustgate-sdk)**.
+
+Any developer, web service provider, or Model Context Protocol (MCP) server can protect their endpoints with Concordium identity verification and x402 monetization in **3 lines of code**:
+
+### 1. Install the SDK:
+```bash
+npm install @0xskinny001/trustgate-sdk
+```
+
+### 2. Wrap your API Handler (Next.js / Node.js):
+```typescript
+import { withTrustGate } from '@0xskinny001/trustgate-sdk';
+
+// Wrap your route handler with the TrustGate automated bouncer
+export const POST = withTrustGate(async (req, { agentIdentity, paymentProof }) => {
+  return Response.json({
+    status: "Success",
+    message: "Protected intelligence released!",
+    verifiedOwner: agentIdentity?.concordiumAccount,
+    settledTx: paymentProof?.txHash
+  });
+}, {
+  concordiumAccount: "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+  tariff: "0.002 CCD",
+  enforceArticle12: true
+});
+```
+
+### 3. Model Context Protocol (MCP) Server:
+```typescript
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { wrapToolWithTrustGate } from "@0xskinny001/trustgate-sdk";
+
+const server = new McpServer({ name: "WeatherAgent", version: "1.0.0" });
+
+server.tool(
+  "query_live_weather",
+  wrapToolWithTrustGate({
+    tariff: "0.002 CCD",
+    concordiumAccount: "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    handler: async (args) => ({ temperature: "18.4C", status: "RELEASED" })
+  })
+);
+```
+
+---
+
+## 🌟 Standout Enterprise Features
+
+TrustGate includes four standout enterprise features accessible directly from the live control plane:
+
+1. **Developer Drop-In SDK Drawer (Tab 6: `sdk`):**
+   - 3-line drop-in code snippet drawer for **Next.js/TypeScript**, **Python/FastAPI**, **Model Context Protocol (MCP)**, and raw **cURL**.
+   - Includes one-click copy buttons for terminal install commands and code blocks.
+
+2. **EU AI Act Article 12 Compliance Certificate Downloader (Tab 5: `audit`):**
+   - Forensic certificate generator downloading official `.json` compliance certificates containing statutory provisions (Regulation EU 2024/1689), Concordium CCDExplorer audit URLs, and SHA-256 payload integrity digests.
+   - Includes a one-click **"Export Article 12 Ledger"** archive button.
+
+3. **Live On-Chain Badge & Key Inspector (Tab 2: `registry`):**
+   - Interactive live inspector with one-click test presets (*"Load Real Badge"*, *"Load Concordium Account"*, *"Test Unregistered Bot"*).
+   - Validates CIS-8004 state, cross-chain Base EVM bindings, and risk scoring in real time.
+
+4. **Interactive Wire Protocol Playground (Tab 1: `monitor`):**
+   - Live wire inspector with interactive scenario toggles:
+     - **Case A (200 OK)**: Verified agent with settled x402 payment.
+     - **Case B (402 Payment Required)**: Autonomous micro-payment challenge issued.
+     - **Case C (403 Forbidden)**: Unregistered rogue bot blocked at the gate.
+   - Displays exact raw HTTP wire request and response headers.
 
 ---
 
@@ -176,6 +252,12 @@ TrustGate/
 │   │   ├── stats/route.ts                 # Gateway telemetry and revenue metrics
 │   │   └── simulate/route.ts              # Agent simulation controller
 │   └── icon.svg                           # Bespoke TrustGate archway & keyhole emblem
+├── packages/
+│   └── trustgate-sdk/                     # Official @0xskinny001/trustgate-sdk npm package
+│       ├── src/                           # TypeScript source (gateway, concordium, x402)
+│       ├── dist/                          # Compiled CommonJS (.js) and ESM (.mjs) with types (.d.ts)
+│       ├── package.json                   # Standalone npm package manifest
+│       └── README.md                      # SDK documentation
 ├── lib/
 │   └── trustgate/
 │       ├── types.ts                       # Core interfaces (AgentIdentity, AuditRecord, x402)

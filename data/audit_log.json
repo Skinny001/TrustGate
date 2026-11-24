@@ -1,5 +1,29 @@
 [
   {
+    "id": "rec_1795526415406_qh1uf",
+    "timestamp": "2026-11-24T13:20:15.406Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "Agent-A",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified",
+    "riskScore": 0
+  },
+  {
+    "id": "rec_1795526376733_erv0h",
+    "timestamp": "2026-11-24T13:19:36.733Z",
+    "endpoint": "/api/gateway/protected-data",
+    "method": "GET",
+    "agentId": "Agent-A",
+    "concordiumOwner": "4Qpfc7LiNCYQQUpVFmbRg6gaoCCfvuAQTqE4VC4XDE22moedYc",
+    "decision": "ALLOWED",
+    "statusCode": 200,
+    "reason": "Verified",
+    "riskScore": 0
+  },
+  {
     "id": "rec_1795098951038_4u917",
     "timestamp": "2026-11-19T14:35:51.038Z",
     "endpoint": "/api/gateway/protected-data",
