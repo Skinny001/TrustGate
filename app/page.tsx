@@ -251,14 +251,14 @@ export default function LandingPage() {
                 </span>
               </div>
               <span className="font-mono text-[10px] uppercase tracking-widest text-stone-600">
-                80s · CIS-8004 · x402 · Art. 12
+                2m 42s · CIS-8004 · x402 · Art. 12 · SDK
               </span>
             </div>
 
             {/* Responsive 16:9 Video Player */}
             <div className="relative w-full overflow-hidden rounded-lg border border-stone-400 bg-stone-950 aspect-video shadow-inner">
               <iframe
-                src="https://www.youtube.com/embed/u_wb-OnNzN8?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/_n1_fkSQEv0?rel=0&modestbranding=1"
                 title="TrustGate Product Demonstration Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

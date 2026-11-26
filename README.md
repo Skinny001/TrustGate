@@ -17,7 +17,7 @@
 | :--- | :---: | :--- |
 | **1. Description** (What you built, how it works, Concordium components) | ✅ **Complete** | See [Overview & How It Works](#-description--how-it-works) and [Concordium Components](#-concordium-components-in-trustgate) |
 | **2. Public Code Repository** | ✅ **Complete** | [github.com/Skinny001/TrustGate](https://github.com/Skinny001/TrustGate) |
-| **3. Demo Video** (Up to 3 minutes, showing core flow working) | ✅ **Complete** | [Watch on YouTube (https://youtu.be/u_wb-OnNzN8)](https://youtu.be/u_wb-OnNzN8) — See [Demo Video Details](#-product-demo-video) |
+| **3. Demo Video** (Up to 3 minutes, showing core flow working) | ✅ **Complete** | [Watch on YouTube (https://youtu.be/_n1_fkSQEv0)](https://youtu.be/_n1_fkSQEv0) — See [Demo Video Details](#-product-demo-video) |
 | **4. CCDExplorer Links** (Agent, contract, and testnet transactions) | ✅ **Complete** | Live Concordium Testnet links — See [On-Chain Verification](#-ccdexplorer-links--on-chain-identity) |
 | **5. Path to Production** (Requirements to go live on Mainnet) | ✅ **Complete** | Detailed 5-phase plan — See [Path to Production](#-path-to-production) |
 | **6. Official NPM Package** (Drop-in SDK for developers) | ✅ **Complete** | [`@0xskinny001/trustgate-sdk` on npm](https://www.npmjs.com/package/@0xskinny001/trustgate-sdk) — See [Developer SDK](#-official-developer-drop-in-sdk-0xskinny001trustgate-sdk) |
@@ -160,28 +160,32 @@ TrustGate includes four standout enterprise features accessible directly from th
 
 ## 🎬 Product Demo Video
 
-> **Official Demo Video:** [https://youtu.be/u_wb-OnNzN8](https://youtu.be/u_wb-OnNzN8)
+> **Official Demo Video:** [https://youtu.be/_n1_fkSQEv0](https://youtu.be/_n1_fkSQEv0)
 
-An automated, motion-designed demo video built with Remotion (React + TypeScript) shows the full TrustGate experience in 80 seconds (1m 20s), featuring:
+An automated, motion-designed demo video built with Remotion (React + TypeScript) demonstrates the full TrustGate experience in **2 minutes 42 seconds (162s)** — strictly adhering to the hackathon rule of up to 3 minutes:
 - **Broadsheet Newspaper UI Theme:** Warm newsprint `#F6F4EE`, printer's ink `#1C1917`, and crimson wax stamps `#991B1B`.
 - **Narration:** Natural voiceover by **Daniel** (distinguished British broadsheet narration).
 - **Synchronized Subtitles:** Integrated read-along subtitle overlay for accessibility and muted feeds.
-- **Dynamic 120 BPM Soundtrack:** Original code-synthesized drum and bass groove with 39 frame-accurate UI sound effects (clicks, coins, stamps, thuds).
+- **Dynamic 120 BPM Soundtrack:** Original code-synthesized drum and bass groove with 49 frame-accurate UI sound effects (clicks, coins, stamps, thuds, locks).
 
 ### Video Links & Deliverables:
-- **YouTube Link:** [https://youtu.be/u_wb-OnNzN8](https://youtu.be/u_wb-OnNzN8)
+- **YouTube Link:** [https://youtu.be/_n1_fkSQEv0](https://youtu.be/_n1_fkSQEv0)
 - **Embedded Player:** Viewable directly on the [TrustGate Landing Page](http://localhost:3000#demo-broadcast)
-- **Social / Reels Cut (1080 × 1920):** Available in `video/out/trustgate-demo-1080x1920.mp4`
+- **Full 1080p Master:** Rendered at `video/out/trustgate-demo-1920x1080.mp4`
 - **Sidecar Subtitles (.SRT file):** [public/trustgate-subtitles.srt](file:///Users/mac/Desktop/Dev/TrustGate/public/trustgate-subtitles.srt)
 
-### Video Walkthrough Structure:
-1. **0s–12s (Front Page Broadsheet):** Cover thumbnail and manifesto introduction. Operator clicks *Launch Control Plane*.
-2. **12s–24s (Agent Registry CIS-8004):** Inspects the agent badge and accountable Concordium owner. Slams red *VERIFIED BY CONCORDIUM* stamp.
-3. **24s–34s (CIS-8 Key Bindings):** Cryptographic bridge links Base EVM key to Concordium ID with mechanical lock.
-4. **34s–50s (Agent A Simulation):** HTTP 402 challenge issued → Agent settles 0.002 CCD autonomously → HTTP 200 OK telemetry released.
-5. **50s–62s (Agent B Simulation):** Unverified script intercepted → *HTTP 403 FORBIDDEN: ROGUE AGENT REFUSED* bouncer stamp slams.
-6. **62s–72s (Article 12 Audit Log):** Forensic JSON inspection verifying EU AI Act Article 12 compliance.
-7. **72s–80s (Outro & CTA):** 3-word payoff (*VERIFIED. MONETIZED. ACCOUNTABLE.*) and GitHub repository link.
+### Core Workflow Walkthrough Structure:
+1. **00:00–00:18 (Front Page Broadsheet):** Broadsheet masthead, architectural pillars, and operator launching the control plane.
+2. **00:18–00:38 (Live Monitor — Agent A):** Authorized agent requests telemetry → HTTP 402 challenge → 0.002 CCD settled autonomously → 200 OK data released.
+3. **00:38–00:50 (Live Monitor — Agent B):** Unverified scraping bot intercepted → cold HTTP 403 Forbidden rejection.
+4. **00:50–01:04 (Protocol Wire Playground):** Interactive raw HTTP header inspector for 200 OK, 402 Payment Required, and 403 Forbidden wire payloads.
+5. **01:04–01:16 (Agent Registry CIS-8004):** CIS-8004 NFT agent identity badge bound to verified human owner.
+6. **01:16–01:25 (CIS-8 Key Bindings):** Cryptographic cross-chain key binding linking Base EVM key to Concordium ID.
+7. **01:25–01:39 (Live On-Chain Badge Inspector):** Real-time on-chain verification testing Real Badge (Risk 0/100) vs. Rogue Impostor (Risk 95/100).
+8. **01:40–01:53 (Article 12 Audit Log):** Forensic regulatory ledger compliant with EU AI Act Article 12 non-repudiation obligations.
+9. **01:54–02:09 (Statutory Decree Modal):** Official Article 12 compliance certificate with legal seal, SHA-256 hashes, and exportable PDF printout.
+10. **02:10–02:29 (Developer SDK Drop-In):** Official `@0xskinny001/trustgate-sdk` npm package installation & 3-line Next.js / MCP server integration.
+11. **02:30–02:42 (Conclusion & CTA):** *Verified. Monetized. Accountable.* + CCDScan Testnet explorer and GitHub links.
 
 ---
 
